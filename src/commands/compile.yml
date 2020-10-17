@@ -1,7 +1,12 @@
 description: >
   Compiles the Platform IO project
 
+parameters:
+  project-conf:
+    type: string
+    default: platformio.ini
+
 steps:
   - run:
       name: "Compile"
-      command: platformio ci --build-dir="./bin" --keep-build-dir --project-conf=platformio.ini ./src/
+      command: platformio run --project-conf=<<parameters.project-conf>>
