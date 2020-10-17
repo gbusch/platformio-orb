@@ -17,18 +17,19 @@ Orb for building PlatformIO projects with CircleCI.
 version: 2.1
 
 orbs:
-  platformio-orb: gbusch/platformio-orb@0.1.1
+  platformio-orb: gbusch/platformio-orb@0.3.0
 
 jobs:
-  compilation:
+  build:
     executor: platformio-orb/default
     steps:
       - checkout
       - platformio-orb/compile
+      - platformio-orb/publish
 
 workflows:
   version: 2
   workflow:
     jobs:
-    - compilation
+    - build
 ```
