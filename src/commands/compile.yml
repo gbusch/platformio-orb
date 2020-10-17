@@ -6,7 +6,7 @@ parameters:
     type: string
     default: platformio.ini
 
-    steps:
+steps:
   - run:
       name: "Compile"
       command: platformio run --project-conf=<<project-conf>>
