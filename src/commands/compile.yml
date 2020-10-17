@@ -9,4 +9,4 @@ parameters:
 steps:
   - run:
       name: "Compile"
-      command: platformio run --project-conf=<<project-conf>>
+      command: platformio run --project-conf=<<parameters.project-conf>>
