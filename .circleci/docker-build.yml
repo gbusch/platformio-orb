@@ -19,6 +19,6 @@ jobs:
           name: "Publish Docker Images"
           command: |
             echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USER --password-stdin
-            
+
             echo "Publishing cimg/node to Docker Hub production."
             docker push circleci/welcome-config-image
