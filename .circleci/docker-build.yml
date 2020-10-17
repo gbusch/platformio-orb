@@ -1,0 +1,24 @@
+version: 2.1
+
+workflows:
+  main:
+    jobs:
+      - build
+
+jobs:
+  build:
+    docker:
+      - image: cibuilds/docker:19.03
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: "Build Docker Images"
+          command: ./build-images.sh
+      - deploy:
+          name: "Publish Docker Images"
+          command: |
+            echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USER --password-stdin
+
+            echo "Publishing cimg/node to Docker Hub production."
+            docker push circleci/welcome-config-image
