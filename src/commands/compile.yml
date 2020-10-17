@@ -1,8 +1,6 @@
 description: >
   Compiles the Platform IO project
 
-executor: default
-
 steps:
   - run:
       name: "Compile"
