@@ -20,5 +20,5 @@ jobs:
           command: |
             echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USER --password-stdin
 
-            echo "Publishing cimg/node to Docker Hub production."
-            docker push circleci/welcome-config-image
+            echo "Publishing buschg/platformio_circleci to Docker Hub production."
+            docker push buschg/platformio_circleci
