@@ -10,4 +10,4 @@ steps:
           mkdir -p bin/${p} && cp .pio/build/${p}firmware.bin bin/${p}firmware.bin
         done
   - store_artifacts:
-      path: /bin
+      path: bin
